@@ -8,11 +8,12 @@
 template <class T>
 
 /// function to cout vector
-void cout_vector(const std::vector<T>& v)
+void cout_vector(const std::vector<T>& vec)
 {
-  std::copy(std::begin(v), std::end(v), std::ostream_iterator<T>(std::cout, " "));
+  std::copy(std::begin(vec), std::end(vec), std::ostream_iterator<T>(std::cout, " "));
 }
 
+/// main program
 int main(int argc, char* argv[])
 {
   // convert argv to string
