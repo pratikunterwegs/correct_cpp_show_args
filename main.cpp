@@ -1,12 +1,22 @@
 /// program to show cli args
 #include <iostream>
+#include <string>
+#include <vector>
+#include <ostream>
+#include <iterator>
+
+template <class T>
+void cout_vector(const std::vector<T>& v)
+{
+  std::copy(std::begin(v), std::end(v), std::ostream_iterator<T>(std::cout, " "));
+}
 
 int main(int argc, char* argv[])
 {
-  std::cout << argv[0];
-  for (int i=0; i!=argc; ++i)
-  {
-    std::cout << ' '  << argv[i];
-  }
-  std::cout << '\n';
+  // convert argv to string
+  std::vector<std::string> cliArgs(argv, argv + argc);
+
+  // print vector
+  cout_vector(cliArgs);
+
 }
